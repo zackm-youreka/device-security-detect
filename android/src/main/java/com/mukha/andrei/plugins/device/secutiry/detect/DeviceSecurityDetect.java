@@ -2,6 +2,10 @@ package com.mukha.andrei.plugins.device.secutiry.detect;
 
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStreamReader;
+
 public class DeviceSecurityDetect {
     public boolean isDeviceRooted() {
         return checkBuildTags() || checkSuBinary() || isSuBinaryAvailable();

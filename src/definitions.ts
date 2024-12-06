@@ -1,3 +1,3 @@
 export interface DeviceSecurityDetectPlugin {
-  isJailBreakOrRooted(): Promise<{ result: boolean }>;
+  isJailBreakOrRooted(): Promise<{ value: boolean }>;
 }
