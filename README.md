@@ -1,6 +1,6 @@
 <p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
 <h3 align="center">Device Security Detect</h3>
-<p align="center"><strong><code>@capacitor-community/example</code></strong></p>
+<p align="center"><strong><code>@capacitor-community/device-security-detect</code></strong></p>
 <p align="center">
   The Device Security Detect plugin is designed to provide comprehensive device security detection capabilities for Capacitor-based applications. It aims to detect the device has been rooted (Android) or jailbroken (iOS). By using this plugin, developers can enhance the security of their applications and take appropriate actions based on the detected security status.
 </p>
