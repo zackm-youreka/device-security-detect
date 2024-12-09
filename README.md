@@ -1,8 +1,8 @@
 <p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
-<h3 align="center">Example</h3>
-<p align="center"><strong><code>@capacitor-community/example</code></strong></p>
+<h3 align="center">Device Security Detect Plugin</h3>
+<p align="center"><strong><code>@capacitor-community/device-security-detect</code></strong></p>
 <p align="center">
-  Capacitor community plugin for something awesome.
+  The Device Security Detect plugin is designed to provide comprehensive device security detection capabilities for Capacitor-based applications. It aims to detect the device has been rooted (Android) or jailbroken (iOS). By using this plugin, developers can enhance the security of their applications and take appropriate actions based on the detected security status.
 </p>
 
 <p align="center">
@@ -17,20 +17,69 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
+## Table of Contents
+
+- [Maintainers](#maintainers)
+- [Plugin versions](#plugin-versions)
+- [Supported Platforms](#supported-platforms)
+- [Installation](#installation)
+- [API](#api)
+- [Usage](#usage)
+
 ## Maintainers
 
-| Maintainer | GitHub | Social |
-| -----------| -------| -------|
-| Ionitron (example) | [Ionitron](https://github.com/ionitron) | [@ionitron](https://twitter.com/ionitron) |
+| Maintainer | GitHub                              | Active |
+| ---------- | -------------------------------     | ------ |
+| 4ooper     | [4ooper](https://github.com/4ooper) | yes    |
+| ryaa       | [ryaa](https://github.com/ryaa)     | yes    |
+
+## Plugin versions
+
+| Capacitor version | Plugin version |
+| ----------------- | -------------- |
+| 6.x               | 6.x            |
+
+## Supported Platforms
+
+- iOS
+- Android
 
 ## Installation
 
-TODO
+```bash
+npm install @capacitor-community/device-security-detect
+npx cap sync
+```
 
-## Configuration
+## API
 
-TODO
+<docgen-index>
+
+* [`isJailBreakOrRooted()`](#isjailbreakorrooted)
+
+</docgen-index>
+
+<docgen-api>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### isJailBreakOrRooted()
+
+```typescript
+isJailBreakOrRooted() => Promise<{ value: boolean; }>
+```
+
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+
+--------------------
+
+</docgen-api>
 
 ## Usage
 
-TODO
+### Detect if the device has been rooted (Android) or jailbroken (iOS)
+
+```
+import { DeviceSecurityDetect } from '@capacitor-community/device-security-detect';
+
+const { value } = await DeviceSecurityDetect.isJailBreakOrRooted();
+```
