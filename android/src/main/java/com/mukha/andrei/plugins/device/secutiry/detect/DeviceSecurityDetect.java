@@ -8,12 +8,20 @@ import java.io.InputStreamReader;
 
 public class DeviceSecurityDetect {
     public boolean isDeviceRooted() {
-        return checkBuildTags() || checkSuBinary() || isSuBinaryAvailable();
+        return checkBuildProperties() || checkSuBinary() || isSuBinaryAvailable();
     }
 
-    private boolean checkBuildTags() {
-        String buildTags = android.os.Build.TAGS;
-        return buildTags != null && buildTags.contains("test-keys");
+    private boolean checkBuildProperties() {
+        return containsSubstring(android.os.Build.TAGS, "test-keys") ||
+               containsSubstring(android.os.Build.FINGERPRINT, "test-keys") ||
+               containsSubstring(android.os.Build.DISPLAY, "test-keys") ||
+               containsSubstring(android.os.Build.HARDWARE, "goldfish") ||
+               containsSubstring(android.os.Build.PRODUCT, "sdk") ||
+               containsSubstring(android.os.Build.PRODUCT, "generic");
+    }
+
+    private boolean containsSubstring(String propertyValue, String substring) {
+        return propertyValue != null && propertyValue.contains(substring);
     }
 
     private boolean checkSuBinary() {
